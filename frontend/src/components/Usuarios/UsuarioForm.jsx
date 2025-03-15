@@ -4,7 +4,7 @@ import api from '../../services/api';
 const UsuarioForm = ({ onUsuarioCreado }) => {
   const [usuario, setUsuario] = useState({
     nombre: '',
-    rol: 'Paciente', // Valor por defecto
+    rol: 'Paciente', 
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,6 @@ const UsuarioForm = ({ onUsuarioCreado }) => {
       const response = await api.post('/usuarios', usuario);
       console.log("Usuario creado:", response.data);
       if (onUsuarioCreado) onUsuarioCreado();
-      // Limpiar formulario (opcional)
       setUsuario({ nombre: '', rol: 'Paciente' });
     } catch (error) {
       console.error("Error al crear el usuario:", error);

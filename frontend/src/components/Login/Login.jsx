@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { loginWithEmail } from "../../config/firebase"; // Asegúrate de importar desde firebase.js
+import { loginWithEmail } from "../../config/firebase"; 
 import api from "../../services/api";
 
 const Login = () => {
@@ -16,10 +16,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Autenticar con Firebase y obtener el token
       const idToken = await loginWithEmail(credentials.correo, credentials.contrasena);
 
-      // Enviar el token al backend en lugar de la contraseña
       const response = await api.post("/login", { id_token: idToken });
 
       setMessage(response.data.message);

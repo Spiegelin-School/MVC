@@ -1,4 +1,3 @@
-// frontend/src/App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import CitaForm from './components/Citas/CitaForm';
